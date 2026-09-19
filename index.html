@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I AM — a novel by J.N.R. Quitt</title>
+<meta name="description" content="I AM, a novel by J.N.R. Quitt — read online. A work in progress.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="wip-banner" class="wip-banner">
+  <span>📖 <strong>Work in Progress</strong> — chapters are posted as they're drafted. Story and text may change before the book is finished.</span>
+  <button id="wip-dismiss" aria-label="Dismiss">&times;</button>
+</div>
+
+<header class="site-header">
+  <a href="#/" class="brand" id="brand-link">
+    <span class="brand-title">I AM</span>
+    <span class="brand-byline">a novel by J.N.R. Quitt</span>
+  </a>
+  <button id="settings-toggle" class="icon-btn" aria-label="Reading settings" aria-expanded="false">Aa</button>
+</header>
+
+<div id="settings-panel" class="settings-panel" hidden>
+  <div class="settings-row">
+    <span class="settings-label">Text size</span>
+    <div class="settings-controls">
+      <button id="font-dec" class="pill-btn" aria-label="Decrease text size">A-</button>
+      <button id="font-inc" class="pill-btn" aria-label="Increase text size">A+</button>
+    </div>
+  </div>
+  <div class="settings-row">
+    <span class="settings-label">Reading mode</span>
+    <div class="settings-controls theme-controls">
+      <button class="pill-btn theme-btn" data-theme="light" aria-label="Light mode">☀️ Light</button>
+      <button class="pill-btn theme-btn" data-theme="dark" aria-label="Dark mode">🌙 Dark</button>
+      <button class="pill-btn theme-btn" data-theme="system" aria-label="Match system">🖥️ Auto</button>
+    </div>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<footer class="site-footer">
+  <p>I AM &mdash; a novel by J.N.R. Quitt. This site is a work in progress; chapters may be revised.</p>
+</footer>
+
+<script src="chapters.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
