@@ -134,7 +134,7 @@
   function renderSynopsis() {
     document.title = "Synopsis — I AM";
     var html = "";
-    html += '<div class="reader-nav-top"><a href="#/">\\u2190 Table of contents</a><span>Synopsis</span></div>';
+    html += '<div class="reader-nav-top"><a href="#/">\u2190 Table of contents</a><span>Synopsis</span></div>';
     html += '<div class="spoiler-warning"><strong>Major spoilers:</strong> this synopsis describes the full intended story, including revelations and the ending.</div>';
     html += '<div class="synopsis-content">' + renderSynopsisMarkdown(SYNOPSIS_MARKDOWN) + "</div>";
     html += '<a class="toc-return" href="#/">Back to table of contents</a>';
