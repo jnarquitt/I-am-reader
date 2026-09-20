@@ -86,6 +86,27 @@
     }).join("\n");
   }
 
+  function renderInlineMarkdown(str) {
+    return escapeHtml(str)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>");
+  }
+
+  function renderSynopsisMarkdown(content) {
+    var blocks = content.split(/\n\n+/);
+    return blocks.map(function (block) {
+      block = block.trim();
+      if (!block) return "";
+      if (block.indexOf("## ") === 0) {
+        return '<h2 class="synopsis-subheading">' + renderInlineMarkdown(block.slice(3)) + "</h2>";
+      }
+      if (block.indexOf("# ") === 0) {
+        return '<h1 class="synopsis-title">' + renderInlineMarkdown(block.slice(2)) + "</h1>";
+      }
+      return "<p>" + renderInlineMarkdown(block).replace(/\n/g, "<br>") + "</p>";
+    }).join("\n");
+  }
+
   // ---------- Views ----------
   function renderTOC() {
     document.title = "I AM — a novel by J.N.R. Quitt";
@@ -105,6 +126,17 @@
     html += "</ul>";
     html += '<p class="toc-intro" style="margin-top:2.5rem;font-size:0.95rem;">More chapters are posted as they\u2019re finished. This is the complete manuscript so far, in reading order.</p>';
 
+    app.innerHTML = html;
+    window.scrollTo(0, 0);
+  }
+
+  function renderSynopsis() {
+    document.title = "Synopsis — I AM";
+    var html = "";
+    html += '<div class="reader-nav-top"><a href="#/">\\u2190 Table of contents</a><span>Synopsis</span></div>';
+    html += '<div class="spoiler-warning"><strong>Major spoilers:</strong> this synopsis describes the full intended story, including revelations and the ending.</div>';
+    html += '<div class="synopsis-content">' + renderSynopsisMarkdown(SYNOPSIS_MARKDOWN) + "</div>";
+    html += '<a class="toc-return" href="#/">Back to table of contents</a>';
     app.innerHTML = html;
     window.scrollTo(0, 0);
   }
