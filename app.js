@@ -111,6 +111,7 @@
   function renderTOC() {
     document.title = "I AM — a novel by J.N.R. Quitt";
     var html = '<p class="toc-intro">A geneticist chasing the reason her mother is losing herself finds an impossible truth in a stranger\u2019s blood \u2014 and a man who has spent two thousand years learning how to disappear decides, for the first time, not to.</p>';
+    html += '<a class="synopsis-link" href="#/synopsis"><span class="synopsis-link-title">Read the full synopsis</span><span class="synopsis-link-note">Major story spoilers</span></a>';
 
     var currentPart = null;
     CHAPTERS.forEach(function (ch, i) {
@@ -184,7 +185,9 @@
   function route() {
     var hash = window.location.hash || "#/";
     var readMatch = hash.match(/^#\/read\/(.+)$/);
-    if (readMatch) {
+    if (hash === "#/synopsis") {
+      renderSynopsis();
+    } else if (readMatch) {
       renderChapter(decodeURIComponent(readMatch[1]));
     } else {
       renderTOC();
