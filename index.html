@@ -62,17 +62,28 @@ body{background-image:radial-gradient(circle at 50% -10%,color-mix(in srgb,var(-
 .part-div{margin-top:4rem;}
 .navbtn{box-shadow:0 5px 18px rgba(0,0,0,.05);}
 @media(max-width:600px){body{line-height:1.72}.wrap{padding:0 1rem 5rem}.piece{margin-bottom:2rem}.topbar{padding:.45rem .55rem}.tbtn{min-width:44px}}
+
+.book-hero{max-width:44rem;margin:0 auto;padding:clamp(4rem,12vw,8rem) 1.2rem 3rem;text-align:center;}
+.hero-kicker{font-family:-apple-system,system-ui,sans-serif;font-size:.72rem;letter-spacing:.32em;color:var(--mut);margin-bottom:1.1rem;}
+.book-hero h1{font-size:clamp(3.8rem,15vw,7rem);line-height:.9;letter-spacing:.08em;margin:0;color:var(--fg);font-weight:600;}
+.hero-rule{width:4rem;height:2px;background:var(--acc);margin:1.7rem auto 1.2rem;}
+.hero-byline{font-size:1.05rem;letter-spacing:.14em;margin:.2rem 0 2rem;color:var(--acc);}
+.hero-deck{max-width:34rem;margin:0 auto 2rem;color:var(--mut);font-size:1.05rem;line-height:1.65;}
+.start-reading{display:inline-block;text-decoration:none;background:var(--acc);color:var(--bg);padding:.8rem 1.25rem;border-radius:999px;font-family:-apple-system,system-ui,sans-serif;font-size:.9rem;letter-spacing:.03em;}
+.src,.draft-note,.draft-pill{display:none!important;}
+.toc-static{max-width:42rem;margin:0 auto 2rem;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.05);}
 </style>
 </head>
 <body id="top">
 <div class="scrim" id="scrim"></div>
 <header class="topbar">
-<span class="ttl">I Am · Private Dev Reader</span>
+<span class="ttl"><strong>I AM</strong> · J.N.R. Quitt</span>
 <button class="tbtn" id="tocBtn" aria-label="Contents">☰</button>
 <button class="tbtn" id="decBtn" aria-label="Smaller text">A−</button>
 <button class="tbtn" id="incBtn" aria-label="Larger text">A+</button>
 <button class="tbtn" id="themeBtn" aria-label="Theme">◐</button>
 </header>
+<section class="book-hero"><div class="hero-kicker">A NOVEL</div><h1>I AM</h1><div class="hero-rule"></div><p class="hero-byline">J.N.R. Quitt</p><p class="hero-deck">A medical mystery about memory, consciousness, mortality, and what it means to truly know another person without surrendering who you are.</p><a class="start-reading" href="#01_mia_opening">Begin reading ↓</a></section>
 
 <details class="toc-static" id="contents">
 <summary>☰ Contents — tap to browse all 62 chapters</summary>
